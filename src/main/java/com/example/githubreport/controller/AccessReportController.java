@@ -1,5 +1,6 @@
 package com.example.githubreport.controller;
 
+import com.example.githubreport.service.GitHubService;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -7,15 +8,14 @@ import java.util.*;
 @RequestMapping("/api")
 public class AccessReportController {
 
+    private final GitHubService gitHubService;
+
+    public AccessReportController(GitHubService gitHubService) {
+        this.gitHubService = gitHubService;
+    }
+
     @GetMapping("/access-report")
-    public Map<String, List<String>> getAccessReport(
-            @RequestParam String org) {
-
-        Map<String, List<String>> report = new HashMap<>();
-
-        report.put("alice", Arrays.asList("repo1", "repo2"));
-        report.put("bob", Arrays.asList("repo2", "repo3"));
-
-        return report;
+    public Map<String, List<String>> getAccessReport() {
+        return gitHubService.getAccessReport();
     }
 }
