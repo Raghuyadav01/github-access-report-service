@@ -6,14 +6,12 @@ import java.util.*;
 @Service
 public class GitHubService {
 
-    public Map<String, List<String>> getAccessReport(String org) {
+    public Map<String, List<String>> getAccessReport() {
 
-        // Simulated GitHub API data
         Map<String, List<String>> report = new HashMap<>();
 
-        report.put("alice", Arrays.asList("repo1", "repo2"));
-        report.put("bob", Arrays.asList("repo2", "repo3"));
-        report.put("charlie", Arrays.asList("repo1"));
+        report.put("alice", Arrays.asList("repo1","repo2"));
+        report.put("bob", Arrays.asList("repo2","repo3"));
 
         return report;
     }
