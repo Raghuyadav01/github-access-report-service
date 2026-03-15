@@ -5,6 +5,14 @@ This project connects to the GitHub API and generates a report showing which use
 
 The service retrieves repositories from an organization, identifies collaborators with access, and exposes an API endpoint that returns a structured JSON report mapping users to repositories.
 
+## GitHub API Integration
+
+The service is designed to integrate with the GitHub REST API to retrieve repository and collaborator information from a given organization.
+
+The application can fetch:
+- Organization repositories
+- Repository collaborators
+- User access mapping across repositories
 ---
 
 ## Technologies Used
